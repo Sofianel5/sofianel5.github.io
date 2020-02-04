@@ -13,9 +13,9 @@ document.getElementById('trigger').onclick = function() {
       document.getElementById("main-page").style.marginRight = "30vw";
     }
   }
+document.onmouseover = function () {
     AOS.init()
     window.addEventListener('load', AOS.refresh);
-document.onmouseover = function () {
   document.querySelector('[target=_blank]').remove();
 }
   

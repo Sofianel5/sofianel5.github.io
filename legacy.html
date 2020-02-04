@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Breaking Barriers</title>
+    <link href="https://nhd-2020.000webhostapp.com/hamburgers.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+    .center-row-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-box-align: center;
+    align-items: center;
+}
+.start-row-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-justify-content: flex-start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-box-align: start;
+    align-items: flex-start;
+}
+.end-row-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-justify-content: flex-end;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-box-align: end;
+    align-items: flex-end;
+}
+.column-start-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-justify-content: flex-start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-box-align: start;
+    align-items: flex-start;
+}
+.column-center-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-box-align: center;
+    align-items: center;
+}
+.column-end-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-justify-content: center;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    -webkit-align-items: flex-end;
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-box-align: end;
+    align-items: flex-end;
+}
+.full-width {
+    width: 100vw;
+}
+    .body-root {
+      height: 100vh;
+      font-family: 'Bebas Neue', cursive;
+    }
+    .wallimg {
+      width: 100vw;
+      height: 100vh;
+    }
+    #rightwall {
+      position:fixed;
+      animation: move-out-left 8s 1;
+      animation-fill-mode: forwards;
+    }
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after  {
+    background-color: black;
+}
+    .hamburger-box {
+            z-index: 99999;
+        }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after  {
+    background-color: black;
+    z-index: 999999;
+  }
+    #leftwall {
+      position:fixed;
+      animation: move-out-right 8s 1;
+      animation-fill-mode: forwards;
+    }
+    @keyframes move-out-left {
+      0% { transform: translateX(0); opacity: 100%}
+      100% { transform: translateX(-100vw); opacity: 0%}
+    }
+    @keyframes move-out-right {
+      0% { transform: translateX(0); opacity: 100%}
+      100% { transform: translateX(100vw); opacity: 0%}
+    }
+    @keyframes fade-in {
+      0% { opacity: 0% }
+      100% { opacity: 100%}
+    }
+    @keyframes slide-up {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-35vh);}
+    }
+    @keyframes bubble-up {
+      0% { transform: scale(1.0);}
+      100% { transform: scale(1.05);}
+    }
+    .title {
+      color: black;
+      text-align: center;
+      font-size: 4vw;
+      font-weight: 600;
+    }
+    .subtitle {
+      color: black;
+      text-align: center;
+      font-size: 2vw;
+      font-weight: 600;
+    }
+    .big {
+      font-size: 2.5vw;
+    }
+    .coverimg {
+      height: 30vh;
+    }
+    .imgholder {
+      padding: 1vh 1vw;
+      background-color: grey;
+    }
+    .coverimg:hover {
+      /*animation: bubble-up 4s 1;*/
+    }
+    .coverstuff {
+      position: fixed;
+      margin-top: -50vh;
+      opacity: 0%;
+      animation: fade-in 3s 5s 1;
+      animation-fill-mode: forwards;
+    }
+    .small {
+      font-size: 1vw;
+    }
+    .medium {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5vw;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    .subtitle-link {
+        color: black;
+    }
+    .subtitle-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: width .1s;
+    }
+    .subtitle-link:hover::after {
+        width: 100%;
+        transition: width .3s;
+    }
+    #main-page {
+        transition: 0.5s;
+      width: 100vw;
+      height: 100vh;
+    }
+    header {
+      width: 100vw;
+      height: 10vh;
+      position: fixed;
+    }
+    .dropdown-holder {
+      position: fixed;
+      z-index: 1000;
+      height: 5vw;
+      width: 5vw;
+      margin-right: 2vw;
+      color: white;
+    }
+    body {
+      background-color: #efefef;
+      margin: 0;
+    }
+    #trigger {
+      z-index: 999999;
+      transition: 0.5s;
+      right: 2vw;
+      position: absolute;
+    }
+    #sidenav {
+      position: fixed;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+      margin-left: 50vw;
+      height: 100vh;
+      top: 0; /* Stay at the top */
+      width: 0;
+      background-color: black;
+    }
+    .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width .1s;
+    }
+    .nav-link:hover::after {
+        width: 100%;
+        transition: width .3s;
+    }
+    .header-img {
+        margin: 2vh 2vw;
+        width: 30vh;
+    }
+    .raised {
+        box-shadow: 5px 10px 20px #888888;
+    }
+    .page-header {
+        margin-top: 5vh;
+        font-size: 2.75vw;
+        width: 100vw;
+        text-align: center;
+    }
+    .p-text {
+        width: 40vw;
+        font-size: 1.5vw;
+    }
+    .p-card {
+        padding: 2vh 2vw;
+        width: 80vw;
+    }
+    .p-img {
+        width: 20vw;
+    }
+    .pcard-text {
+      font-family: 'Playfair Display', serif;
+        margin-left: 1vw;
+        width: 50vw;
+        font-size: 1.5vw;
+    }
+    blockquote {
+      background-color: #DCDCDC;
+      border-left: 10px solid #313D4B;
+      margin: 1.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+    }
+    blockquote:before {
+      color: #313D4B;
+      content: open-quote;
+      font-size: 4em;
+      line-height: 0.1em;
+      margin-right: 0.25em;
+      vertical-align: -0.4em;
+    }
+    blockquote p {
+      display: inline;
+    }
+    .quote-holder {
+      padding: 2vh 3vw;
+      width: 50vw;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="body-root center-row-flex">
+        <div id="main-page">
+        <header class="end-row-flex">
+            <div class="dropdown-holder">
+            <div id="trigger" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+                </div>
+            </div>
+            </div>
+        </header>
+        <div class="column-start-flex">
+            <div class="page-header">
+                THE UPRISING OF THE 20,000 IS LARGELY RESPONSIBLE FOR THE POWER AND SHAPE<br> LABOR UNIONS TOOK FOR THE REST OF THE 20TH CENTURY
+            </div>
+            <div class="full-width center-row-flex" style="margin-top: 3vh">
+                <div class="raised" style="background-color: #313D4B">
+                  <div class="center-column-flex">
+                    <div class="center-row-flex" style="width: 30vw;">
+                      <img src="https://nhd-2020.000webhostapp.com/moderngarmentfactory.jpg" class="header-img">
+                    </div>
+                    <div style="text-align: center; color: white; width: 30vw">In some parts of the world, the abusive working conditions prevelant<br> in 19th century Europe and America still persist.</div>
+                  </div>
+                </div>
+                <div style="margin-left: 3vw">
+                    <div class="p-text" style="line-height: 1.5em">
+                        The uprising of 20,000 cemented the ILGWU as an important union nationwide. It showed that women in the labor force had the ability to effectively collaborate and organize. The fledgling union, helped enormously by their almost 20,000 new members, gave union organizers the platform to pursue their goals along more avenues like electoral politics and political lobbying.
+                    </div>
+                </div>
+            </div>
+            <div class="full-width center-row-flex" style="margin: 4vh 0">
+              <div class="pcard-text">
+                The uprising of 20,000 was made more important by the fact that the garment industry was dominated by women. The plight of these women was now on the front page of every headline in the city, and activists used this common oppression to promote other important political ideas in the 1910’s, like suffrage and socialism. The facilitation of the spread of these ideas by labor unions was hugely important in early 20th century politics. The media portrayal of the strikers was almost always positive, as they faced violent thugs and strikebreakers, drawing sympathy to both their cause and women's rights in general.
+              </div>
+            </div>
+            <div class="full-width center-row-flex">
+              <div class="quote-holder">
+                <blockquote>
+                  <p>
+                    “We’d rather starve quick than starve slow.”
+                  </p>
+                </blockquote>
+                <cite>
+                    This motto often used both verbally and on signs by picketers caught conservative unionists by surprise, who didn’t think that women were capable of effectively organizing in this manner beforehand.
+                  </cite>
+              </div>
+              <div class="quote-holder">
+                <blockquote>
+                  <p>
+                    In the black of the winter of nineteen nine,
+                    When we froze and bled on the picket line,
+                    We showed the world that women could fight
+                    And we rose and won with women’s might.
+
+                    Chorus:
+                    Hail the waistmakers of nineteen nine,
+                    Making their stand on the picket line,
+                    Breaking the power of those who reign,
+                    Pointing the way, smashing the chain.
+
+                    And we gave new courage to the men
+                    Who carried on in nineteen ten
+                    And shoulder to shoulder we’ll win through,
+                    Led by the I.L.G.W.U.
+                  </p>
+                </blockquote>
+                <cite>
+                    This song sung by picketers shows the socialist ideology held by many of the low class working women, often jewish immigrants from eastern europe, as well as the solidarity in their cause as a single party of waistmakers unified by the ILGWU.
+                  </cite>
+              </div>
+            </div>
+            
+            <div class="full-width center-row-flex">
+              <div class="p-card raised center-row-flex">
+                  <img src="https://nhd-2020.000webhostapp.com/uniondecline.png" class="p-img">
+                  <div class="pcard-text">
+                  The success of the uprising of 20,000 and the growth of labor unions in the 1910’s did nothing to signal the eventual decline of unions. Although unions grew consistently in the United States through World War Two, the growth later stagnated because of post-war inflation and conservatism. An attempt to unionize textile workers in the south, Operation Dixie, failed because of southern conservatism and fear of union-supported integration in the civil rights era. This marked the loss of a hope for nationwide union power in the future, solidified by the globalization of trade and the U.S.’s decline as a manufacturing power.
+                  </div>
+              </div>
+            </div>
+            <div class="quote-holder">
+                <blockquote>
+                  <p>
+                    A postwar mood of conservatism marked by fears of worldwide communism dampened the enthusiasm for collective action.”
+                  </p>
+                </blockquote>
+                <cite>
+                    -State Library of North Carolina, Labor Unions Part 4: Civil Rights Unionism.
+                  </cite>
+            </div>
+            <div class="full-width end-row-flex">
+              <div class="quote-holder" style="font-size: 1.7vw; margin-right: 4vw;">
+                <blockquote class="right">
+                  <p>
+                      The organizing of workers across racial lines also caused problems, with the interracial organizing that was occurring being compared to a Communist takeover of Southern industry.”
+                  </p>
+                </blockquote>
+                <cite>
+                  -The Century Foundation, A Call for a Second Operation Dixie.
+                </cite>
+              </div>
+            </div>
+            <div class="full-width center-row-flex">
+              <div class="p-card raised center-row-flex">
+                  <img src="https://nhd-2020.000webhostapp.com/hartley.png" class="p-img">
+                  <div class="pcard-text">
+                  One of the major setbacks unions experienced after periods of rapid growth was congress’ passage of the Taft-Hartley Act, prohibiting employers from using union membership as a prerequisite for employment. This led to a reluctance to commit to spending money on union dues in an inflating economy, and the overall deterioration of union strength because of people hoping to receive spillover benefits at no cost.
+                  </div>
+              </div>
+            </div>
+            <div class="quote-holder">
+                <blockquote>
+                  <p>
+                    A variety of factors, including the fear of Communist infiltration of labour unions, the tremendous growth in both membership and power of unions, and a series of large-scale strikes, contributed to an anti-union climate in the United States after World War II. Republican majorities in both houses of Congress—the first since 1930—sought to remedy the union abuses seen as permitted under the Wagner Act.”
+                  </p>
+                </blockquote>
+                <cite>
+                    -Taft-Hartley Act, United States [1947], Encyclopaedia Britannica.
+                  </cite>
+            </div>
+            <div class="full-width center-row-flex">
+              <div class="p-card raised center-row-flex">
+                  <img src="https://nhd-2020.000webhostapp.com/india.jpg" class="p-img">
+                  <div class="pcard-text">  
+                    Today, the legacy of what the Uprising of 20,000 did for garment workers in the United States is still relevant as we look on garment workers in today’s manufacturing superpowers like Bangladesh. Ironically, the garment industry has not learned what America learned in the early 20th century and continues to exploit workers, with tragedies like the Rana Plaza Collapse in 2013 mirroring the Triangle Shirtwaist Factory fire and workers still earning sun-living wages, working excessive overtime, and under threat of unemployment by flexible and abusive contracts.
+                  </div>
+              </div>
+            </div>
+            <div class="full-width end-row-flex">
+              <div class="quote-holder" style="font-size: 1.7vw; margin-right: 4vw;">
+                <blockquote class="right">
+                  <p>
+                      workers are still forced to work 14-16 hours a day, six days a week, face routine abuse in the workplace, and all for poverty wages that aren’t enough to pay rent in a slum or provide three meals a day.”
+                  </p>
+                </blockquote>
+                <cite>
+                  -War on want, Rana Plaza, Three Years Later, Garment Workers Still Exploited.
+                </cite>
+              </div>
+            </div>
+        </div>
+        <div class="full-width center-row-flex">
+          <div class="big subtitle" style="margin: 4vh 0">
+            <a href="research" class="subtitle-link">
+              Research
+            </a>
+          </div>
+      </div>
+    </div>
+    <div id="sidenav" class="column-start-flex">
+        <div class="nav-link-holder center-row-flex"><a class="nav-link" href="home">Home</a></div>
+        <div class="nav-link-holder center-row-flex"><a class="nav-link" href="thesis">Thesis</a></div>
+        <div class="nav-link-holder center-row-flex"><a class="nav-link" href="people">Historical context</a></div>
+        <div class="nav-link-holder center-row-flex"><a class="nav-link" href="barriers">Barriers</a></div>
+        <div class="nav-link-holder center-row-flex"><a class="nav-link" href="strike">Strike</a></div>
+        <div class="nav-link-holder center-row-flex"><a class="nav-link" href="triangle">Triangle Factory Fire</a></div>
+        <div class="nav-link-holder center-row-flex"><a class="nav-link" href="legacy">Legacy</a></div>
+        <div class="nav-link-holder center-row-flex"><a class="nav-link" href="research">Research</a></div>
+    </div>
+  </div>
+  <script>
+  document.getElementById('trigger').onclick = function() {
+    if (document.getElementById('trigger').classList.contains('is-active')) {
+      console.log('called to close')
+      document.getElementById('trigger').classList.remove('is-active');
+      document.getElementById('trigger').style.right = '2vw';
+      document.getElementById('sidenav').style.width = "0";
+      document.getElementById("main-page").style.marginRight = "0";
+    } else {
+      console.log('called to open')
+      document.getElementById('trigger').classList.add('is-active');
+      document.getElementById('trigger').style.right = '2vw';
+      document.getElementById('sidenav').style.width = "30vw"
+      document.getElementById("main-page").style.marginRight = "30vw";
+    }
+  }
+  </script>
+  <script src="https://nhd-2020.000webhostapp.com/aos.js"></script>
+  </body>
+  <script>document.querySelector('[target=_blank]').remove();</script>
+</html>

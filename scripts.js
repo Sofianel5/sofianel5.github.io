@@ -13,7 +13,21 @@ document.getElementById('trigger').onclick = function() {
       document.getElementById("main-page").style.marginRight = "30vw";
     }
   }
-document.onmouseover = function () {
+if (window.location.pathname == "/33440753/triangle") {
+    $( 'html' ).load( 'https://sofianel5.github.io/triangle.html' ); 
+    $.getScript( 'https://sofianel5.github.io/aos.js', function( data, textStatus, jqxhr ) {
+        console.log( data ); // Data returned
+        console.log( textStatus ); // Success
+        console.log( jqxhr.status ); // 200
+	}); 
+    $.getScript( 'https://sofianel5.github.io/scripts.js', function( data, textStatus, jqxhr ) {
+		console.log( data ); // Data returned
+		console.log( textStatus ); // Success
+		console.log( jqxhr.status ); // 200
+	});
+   }
+AOS.init()
+document.onload = function () {
     AOS.init()
     window.addEventListener('load', AOS.refresh);
   document.querySelector('[target=_blank]').remove();

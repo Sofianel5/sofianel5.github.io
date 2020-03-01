@@ -29,7 +29,6 @@ if (window.location.pathname == "/33440753/triangle") {
    }
 	if ("i" in window) {
 	   i += 1
-		AOS.refresh()
 	} else {
 	   i = 0
 	AOS.init()

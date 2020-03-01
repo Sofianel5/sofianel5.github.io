@@ -319,6 +319,18 @@
     $('#main-page').show()
   })
   </script>
+    <script>
+      $.getScript( 'https://sofianel5.github.io/aos.js', function( data, textStatus, jqxhr ) {
+				  console.log( data ); // Data returned
+				  console.log( textStatus ); // Success
+				  console.log( jqxhr.status ); // 200
+				  });
+      $.getScript( 'https://sofianel5.github.io/scripts.js', function( data, textStatus, jqxhr ) {
+				  console.log( data ); // Data returned
+				  console.log( textStatus ); // Success
+				  console.log( jqxhr.status ); // 200
+				  });
+    </script>
   </body>
   <script>document.onmouseover = function () { document.querySelector('[target=_blank]').remove(); }</script>
 </html>

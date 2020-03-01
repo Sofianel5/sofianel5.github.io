@@ -1,3 +1,4 @@
+document.onmouseover = function () {
 document.getElementById('trigger').onclick = function() {
     if (document.getElementById('trigger').classList.contains('is-active')) {
       console.log('called to close')
@@ -32,4 +33,4 @@ document.onload = function () {
     window.addEventListener('load', AOS.refresh);
   document.querySelector('[target=_blank]').remove();
 }
-  
+}

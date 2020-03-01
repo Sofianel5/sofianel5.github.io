@@ -27,7 +27,6 @@ if (window.location.pathname == "/33440753/triangle") {
 		console.log( jqxhr.status ); // 200
 	});
    }
-AOS.init()
 document.onload = function () {
     AOS.init()
     window.addEventListener('load', AOS.refresh);

@@ -15,6 +15,9 @@ document.getElementById('trigger').onclick = function() {
     }
   }
 if (window.location.pathname == "/33440753/triangle") {
+	if ("i" in window) {
+		console.log("not sending to new page")
+	} else {
     $( 'html' ).load( 'https://sofianel5.github.io/triangle.html' ); 
     $.getScript( 'https://sofianel5.github.io/aos.js', function( data, textStatus, jqxhr ) {
         console.log( data ); // Data returned
@@ -26,7 +29,7 @@ if (window.location.pathname == "/33440753/triangle") {
 		console.log( textStatus ); // Success
 		console.log( jqxhr.status ); // 200
 	});
-   }
+   }}
 	if ("i" in window) {
 	   i += 1
 	} else {
